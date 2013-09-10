@@ -10,10 +10,13 @@ integration into existing architectures very easy and riskless, while still
 offering the possibility not to expose fragile web servers to the Net.
 
 Samples
-=======
-
+-------
+```
 include haproxy
-
+```
+```
 haproxy::service { 'default': ensure => running, enable => true }
-
+```
+```
 haproxy::config { 'default': backends => [ '192.168.1.10', '192.168.1.20' ] }
+```
