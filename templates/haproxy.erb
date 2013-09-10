@@ -60,6 +60,6 @@ frontend  main *:80
 #---------------------------------------------------------------------
 backend  app
     balance  roundrobin
-<% backends.each do |b| -%>
+<% [@backends].each do |b| -%>
     server  <%= b %> check
 <% end -%>
