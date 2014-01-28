@@ -84,8 +84,12 @@
 <% if global_tune_chksize and ! global_tune_chksize.empty? -%>
   tune.chksize <%= global_tune_chksize %>
 <% end -%>
-   - tune.maxaccept
-   - tune.maxpollevents
+<% if global_tune_maxaccept and ! global_tune_maxaccept.empty? -%>
+  tune.maxaccept <%= global_tune_maxaccept %>
+<% end -%>
+<% if global_tune_maxpollevents and ! global_tune_maxpollevents.empty? -%>
+  tune.maxpollevents <%= global_tune_maxpollevents %>
+<% end -%>
    - tune.maxrewrite
    - tune.rcvbuf.client
    - tune.rcvbuf.server
