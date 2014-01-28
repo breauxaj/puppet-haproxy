@@ -1,5 +1,4 @@
-# Process management and security
-
+global
 <% if global_chroot and ! global_chroot.empty? -%>
   chroot <%= global_chroot %>
 <% end -%>
@@ -51,9 +50,6 @@
 <% if global_stats_maxconn and ! global_stats_maxconn.empty? -%>
   stats maxconn <%= global_stats_maxconn %>
 <% end -%>
-
-# Performance tuning
-
 <% if global_maxconn and ! global_maxconn.empty? -%>
   maxconn <%= global_maxconn %>
 <% end -%>
@@ -105,9 +101,6 @@
 <% if global_tune_sndbuf_server and ! global_tune_sndbuf_server.empty? -%>
   tune.sndbuf.server <%= global_tune_sndbuf_server %>
 <% end -%>
-
-# Debugging
-
 <% if global_debug and ! global_debug.empty? -%>
   debug
 <% end -%>
