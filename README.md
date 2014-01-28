@@ -9,6 +9,12 @@ is clearly realistic with todays hardware. Its mode of operation makes its
 integration into existing architectures very easy and riskless, while still
 offering the possibility not to expose fragile web servers to the Net.
 
+Note
+----
+
+This is being revamped to leverage the full capability. Use at your own risk
+until further notice.
+
 Samples
 -------
 ```
