@@ -1,154 +1,150 @@
-acl                                       -          X         X         X
-appsession                                -          -         X         X
+acl
+appsession
 
-balance                                   X          -         X         X
+balance
 
-bind-process                              X          X         X         X
-block                                     -          X         X         X
-
-
-compression                               X          X         X         X
-
-cookie                                    X          -         X         X
-default-server                            X          -         X         X
-
-description                               -          X         X         X
-disabled                                  X          X         X         X
-dispatch                                  -          -         X         X
-enabled                                   X          X         X         X
-errorfile                                 X          X         X         X
-errorloc                                  X          X         X         X
-errorloc302                               X          X         X         X
--- keyword -------------------------- defaults - frontend - listen -- backend -
-errorloc303                               X          X         X         X
-force-persist                             -          X         X         X
-fullconn                                  X          -         X         X
-grace                                     X          X         X         X
-hash-type                                 X          -         X         X
-http-check disable-on-404                 X          -         X         X
-http-check expect                         -          -         X         X
-http-check send-state                     X          -         X         X
-http-request                              -          X         X         X
-http-response                             -          X         X         X
-tcp-check expect                          -          -         X         X
-tcp-check send                            -          -         X         X
-tcp-check send-binary                     -          -         X         X
-http-send-name-header                     -          -         X         X
-id                                        -          X         X         X
-ignore-persist                            -          X         X         X
-log                                  (*)  X          X         X         X
-
-mode                                      X          X         X         X
-
-option abortonclose                  (*)  X          -         X         X
-
-option accept-invalid-http-response  (*)  X          -         X         X
-option allbackups                    (*)  X          -         X         X
-option checkcache                    (*)  X          -         X         X
-
-option forceclose                    (*)  X          X         X         X
--- keyword -------------------------- defaults - frontend - listen -- backend -
-option forwardfor                         X          X         X         X
-option http-keep-alive               (*)  X          X         X         X
-option http-no-delay                 (*)  X          X         X         X
-option http-pretend-keepalive        (*)  X          X         X         X
-option http-server-close             (*)  X          X         X         X
-
-option httpchk                            X          -         X         X
-option httpclose                     (*)  X          X         X         X
-option httplog                            X          X         X         X
-option http_proxy                    (*)  X          X         X         X
-option independent-streams           (*)  X          X         X         X
-option ldap-check                         X          -         X         X
-option log-health-checks             (*)  X          -         X         X
-
-option mysql-check                        X          -         X         X
-option pgsql-check                        X          -         X         X
-option nolinger                      (*)  X          X         X         X
-option originalto                         X          X         X         X
-option persist                       (*)  X          -         X         X
-option redispatch                    (*)  X          -         X         X
-option redis-check                        X          -         X         X
-option smtpchk                            X          -         X         X
-
-option splice-auto                   (*)  X          X         X         X
-option splice-request                (*)  X          X         X         X
-option splice-response               (*)  X          X         X         X
-option srvtcpka                      (*)  X          -         X         X
-option ssl-hello-chk                      X          -         X         X
--- keyword -------------------------- defaults - frontend - listen -- backend -
-option tcp-check                          X          -         X         X
-
-option tcp-smart-connect             (*)  X          -         X         X
-option tcpka                              X          X         X         X
-option tcplog                             X          X         X         X
-option transparent                   (*)  X          -         X         X
-persist rdp-cookie                        X          -         X         X
-
-redirect                                  -          X         X         X
-
-reqadd                                    -          X         X         X
-reqallow                                  -          X         X         X
-reqdel                                    -          X         X         X
-reqdeny                                   -          X         X         X
-reqiallow                                 -          X         X         X
-reqidel                                   -          X         X         X
-reqideny                                  -          X         X         X
-reqipass                                  -          X         X         X
-reqirep                                   -          X         X         X
-reqisetbe                                 -          X         X         X
-reqitarpit                                -          X         X         X
-reqpass                                   -          X         X         X
-reqrep                                    -          X         X         X
--- keyword -------------------------- defaults - frontend - listen -- backend -
-reqsetbe                                  -          X         X         X
-reqtarpit                                 -          X         X         X
-retries                                   X          -         X         X
-rspadd                                    -          X         X         X
-rspdel                                    -          X         X         X
-rspdeny                                   -          X         X         X
-rspidel                                   -          X         X         X
-rspideny                                  -          X         X         X
-rspirep                                   -          X         X         X
-rsprep                                    -          X         X         X
-server                                    -          -         X         X
-source                                    X          -         X         X
-
-stats admin                               -          -         X         X
-stats auth                                X          -         X         X
-stats enable                              X          -         X         X
-stats hide-version                        X          -         X         X
-stats http-request                        -          -         X         X
-stats realm                               X          -         X         X
-stats refresh                             X          -         X         X
-stats scope                               X          -         X         X
-stats show-desc                           X          -         X         X
-stats show-legends                        X          -         X         X
-stats show-node                           X          -         X         X
-stats uri                                 X          -         X         X
--- keyword -------------------------- defaults - frontend - listen -- backend -
-stick match                               -          -         X         X
-stick on                                  -          -         X         X
-stick store-request                       -          -         X         X
-stick store-response                      -          -         X         X
-stick-table                               -          -         X         X
-
-tcp-request content                       -          X         X         X
-tcp-request inspect-delay                 -          X         X         X
-tcp-response content                      -          -         X         X
-tcp-response inspect-delay                -          -         X         X
-timeout check                             X          -         X         X
+bind-process
+block
 
 
-timeout connect                           X          -         X         X
+compression
 
-timeout http-keep-alive                   X          X         X         X
-timeout http-request                      X          X         X         X
-timeout queue                             X          -         X         X
-timeout server                            X          -         X         X
+cookie
+default-server
 
-timeout tarpit                            X          X         X         X
-timeout tunnel                            X          -         X         X
+description
+disabled
+dispatch
+enabled
+errorfile
+errorloc
+errorloc302
+errorloc303
+force-persist
+fullconn
+grace
+hash-type
+http-check disable-on-404
+http-check expect
+http-check send-state
+http-request
+http-response
+tcp-check expect
+tcp-check send
+tcp-check send-binary
+http-send-name-header
+id
+ignore-persist
+log
 
+mode
 
-use-server                                -          -         X         X
+option abortonclose
+
+option accept-invalid-http-response
+option allbackups
+option checkcache
+
+option forceclose
+option forwardfor
+option http-keep-alive
+option http-no-delay
+option http-pretend-keepalive
+option http-server-close
+
+option httpchk
+option httpclose
+option httplog
+option http_proxy
+option independent-streams
+option ldap-check
+option log-health-checks
+
+option mysql-check
+option pgsql-check
+option nolinger
+option originalto
+option persist
+option redispatch
+option redis-check
+option smtpchk
+
+option splice-auto
+option splice-request
+option splice-response
+option srvtcpka
+option ssl-hello-chk
+
+option tcp-check
+
+option tcp-smart-connect
+option tcpka
+option tcplog
+option transparent
+persist rdp-cookie
+
+redirect
+
+reqadd
+reqallow
+reqdel
+reqdeny
+reqiallow
+reqidel
+reqideny
+reqipass
+reqirep
+reqisetbe
+reqitarpit
+reqpass
+reqrep
+
+reqsetbe
+reqtarpit
+retries
+rspadd
+rspdel
+rspdeny
+rspidel
+rspideny
+rspirep
+rsprep
+server
+source
+
+stats admin
+stats auth
+stats enable
+stats hide-version
+stats http-request
+stats realm
+stats refresh
+stats scope
+stats show-desc
+stats show-legends
+stats show-node
+stats uri
+
+stick match
+stick on
+stick store-request
+stick store-response
+stick-table
+
+tcp-request content
+tcp-request inspect-delay
+tcp-response content
+tcp-response inspect-delay
+timeout check
+
+timeout connect
+
+timeout http-keep-alive
+timeout http-request
+timeout queue
+timeout server
+
+timeout tarpit
+timeout tunnel
+
+use-server
