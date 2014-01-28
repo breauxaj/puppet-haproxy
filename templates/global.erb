@@ -90,13 +90,27 @@
 <% if global_tune_maxpollevents and ! global_tune_maxpollevents.empty? -%>
   tune.maxpollevents <%= global_tune_maxpollevents %>
 <% end -%>
-   - tune.maxrewrite
-   - tune.rcvbuf.client
-   - tune.rcvbuf.server
-   - tune.sndbuf.client
-   - tune.sndbuf.server
+<% if global_tune_maxrewrite and ! global_tune_maxrewrite.empty? -%>
+  tune.maxrewrite <%= global_tune_maxrewrite %>
+<% end -%>
+<% if global_tune_rcvbuf_client and ! global_tune_rcvbuf_client.empty? -%>
+  tune.rcvbuf.client <%= global_tune_rcvbuf_client %>
+<% end -%>
+<% if global_tune_rcvbuf_server and ! global_tune_rcvbuf_server.empty? -%>
+  tune.rcvbuf.server <%= global_tune_rcvbuf_server %>
+<% end -%>
+<% if global_tune_sndbuf_client and ! global_tune_sndbuf_client.empty? -%>
+  tune.sndbuf.client <%= global_tune_sndbuf_client %>
+<% end -%>
+<% if global_tune_sndbuf_server and ! global_tune_sndbuf_server.empty? -%>
+  tune.sndbuf.server <%= global_tune_sndbuf_server %>
+<% end -%>
 
 # Debugging
 
-   - debug
-   - quiet
+<% if global_debug and ! global_debug.empty? -%>
+  debug
+<% end -%>
+<% if global_quiet and ! global_quiet.empty? -%>
+  quiet
+<% end -%>
