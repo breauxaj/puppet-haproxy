@@ -75,9 +75,15 @@
 <% if global_nosplice and ! global_nosplice.empty? -%>
   nosplice
 <% end -%>
-   - spread-checks
-   - tune.bufsize
-   - tune.chksize
+<% if global_spread_checks and ! global_spread_checks.empty? -%>
+  spread-checks <%= global_spread_checks %>
+<% end -%>
+<% if global_tune_bufsize and ! global_tune_bufsize.emtpy? -%>
+  tune.bufsize <%= global_tune_bufsize %>
+<% end -%>
+<% if global_tune_chksize and ! global_tune_chksize.empty? -%>
+  tune.chksize <%= global_tune_chksize %>
+<% end -%>
    - tune.maxaccept
    - tune.maxpollevents
    - tune.maxrewrite
