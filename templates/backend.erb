@@ -1,34 +1,50 @@
-<% if backends and ! backends.empty? -%>
-<% backends.sort_by {|key, value| key}.each do |key, value| -%>
+<% if backends and ! backends.empty? %>
+<% backends.sort_by {|key, value| key}.each do |key, value| %>
 backend <%= key %>
-<% if value['appsession'] and ! value['appsession'].empty? -%>
+<% if value['acl'] and value['acl'].kind_of?(Array) and ! value['acl'].empty? %>
+<% value['acl'].each do |acl| %>
+  acl <%= acl %>
+<% end %>
+<% end %>
+<% if value['appsession'] and ! value['appsession'].empty? %>
   appsession <%= value['appsession'] %>
-<% end -%>
-<% if value['balance'] and ! value['balance'].empty? -%>
+<% end %>
+<% if value['balance'] and ! value['balance'].empty? %>
   balance <%= value['balance'] %>
-<% end -%>
-<% if value['bind-process'] and ! value['bind-process'].empty? -%>
+<% end %>
+<% if value['bind-process'] and ! value['bind-process'].empty? %>
   bind-process <%= value['bind-process'] %>
-<% end -%>
-<% if value['default-server'] and ! value['default-server'].empty? -%>
+<% end %>
+<% if value['block'] and value['block'].kind_of?(Array) and ! value['block'].empty? %>
+<% value['block'].each do |block| %>
+  block <%= block %>
+<% end %>
+<% end %>
+<% if value['cookie'] and value['cookie'].kind_of?(Array) and ! value['cookie'].empty? %>
+<% value['cookie'].each do |cookie| %>
+  cookie <%= cookie %>
+<% end %>
+<% end %>
+<% if value['default-server'] and ! value['default-server'].empty? %>
   default-server <%= value['default-server'] %>
-<% end -%>
-<% if value['disabled'] and ! value['disabled'].empty? -%>
+<% end %>
+<% if value['disabled'] and ! value['disabled'].empty? %>
   disabled
-<% end -%>
-<% if value['dispatch'] and ! value['dispatch'].empty? -%>
+<% end %>
+<% if value['dispatch'] and ! value['dispatch'].empty? %>
   dispatch <%= value['dispatch'] %>
-<% end -%>
-<% if value['enabled'] and ! value['enabled'].empty? -%>
+<% end %>
+<% if value['enabled'] and ! value['enabled'].empty? %>
   enabled
-<% end -%>
+<% end %>
 
-<% end -%>
-<% end -%>
 
-acl
-block
-cookie
+
+
+
+<% end %>
+<% end %>
+
 
 enabled
 errorfile
