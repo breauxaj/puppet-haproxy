@@ -83,18 +83,27 @@ backend <%= key %>
   http-request <%= http_request %>
 <% end -%>
 <% end -%>
+<% if value['id'] and ! value['id'].empty? -%>
+  id <%= value['id'] %>
+<% end -%>
+<% if value['ignore_persist'] and value['ignore_persist'].kind_of?(Array) and ! value['ignore_persist'].empty? -%>
+<% value['ignore_persist'].each do |ignore_persist| -%>
+  ignore-persist <%= ignore_persist %>
+<% end -%>
+<% end -%>
+<% if value['log'] and ! value['log'].empty? -%>
+  log <%= value['log'] %>
+<% end -%>
+
+
+
+
+
+
 
 
 <% end -%>
 <% end -%>
-
-tcp-check expect
-tcp-check send
-tcp-check send-binary
-http-send-name-header
-id
-ignore-persist
-log
 
 mode
 
