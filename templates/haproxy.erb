@@ -1,4 +1,5 @@
 # MANAGED BY PUPPET!
+
 #---------------------------------------------------------------------
 # Global settings
 #---------------------------------------------------------------------
@@ -6,50 +7,31 @@
 <%= scope.function_template(['haproxy/global.erb']) -%>
 
 #---------------------------------------------------------------------
-# common defaults that all the 'listen' and 'backend' sections will
-# use if not designated in their block
+# Default settings
 #---------------------------------------------------------------------
-defaults
-    mode                    http
-    log                     global
-    option                  httplog
-    option                  dontlognull
-    option http-server-close
-    option forwardfor       except 127.0.0.0/8
-    option                  redispatch
-    retries                 3
-    timeout http-request    10s
-    timeout queue           1m
-    timeout connect         10s
-    timeout client          1m
-    timeout server          1m
-    timeout http-keep-alive 10s
-    timeout check           10s
-    maxconn                 3000
+
+<%= scope.function_template(['haproxy/defaults.erb']) -%>
 
 #---------------------------------------------------------------------
-# stats interface
+# Userlists
 #---------------------------------------------------------------------
-listen stats :81
-    mode http
-    stats enable
-    stats hide-version
-    stats scope .
-    stats uri /admin?stats
-    stats realm Haproxy\ Statistics
-    stats auth stats:stats
+
+<%= scope.function_template(['haproxy/userlist.erb']) -%>
 
 #---------------------------------------------------------------------
-# main frontend which proxys to the backends
+# Listens
 #---------------------------------------------------------------------
-frontend  main *:80
-    default_backend             app
+
+<%= scope.function_template(['haproxy/listen.erb']) -%>
 
 #---------------------------------------------------------------------
-# round robin balancing between the various backends
+# Frontends
 #---------------------------------------------------------------------
-backend  app
-    balance  roundrobin
-<% backends.each do |b| -%>
-    server  <%= b %> check
-<% end -%>
+
+<%= scope.function_template(['haproxy/frontend.erb']) -%>
+
+#---------------------------------------------------------------------
+# Backends
+#---------------------------------------------------------------------
+
+<%= scope.function_template(['haproxy/backend.erb']) -%>
