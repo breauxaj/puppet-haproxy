@@ -1,20 +1,35 @@
+<% if backends and ! backends.empty? -%>
+<% backends.sort_by {|key, value| key}.each do |key, value| -%>
+backend <%= key %>
+<% if value['appsession'] and ! value['appsession'].empty? -%>
+  appsession <%= value['appsession'] %>
+<% end -%>
+<% if value['balance'] and ! value['balance'].empty? -%>
+  balance <%= value['balance'] %>
+<% end -%>
+<% if value['bind-process'] and ! value['bind-process'].empty? -%>
+  bind-process <%= value['bind-process'] %>
+<% end -%>
+<% if value['default-server'] and ! value['default-server'].empty? -%>
+  default-server <%= value['default-server'] %>
+<% end -%>
+<% if value['disabled'] and ! value['disabled'].empty? -%>
+  disabled
+<% end -%>
+<% if value['dispatch'] and ! value['dispatch'].empty? -%>
+  dispatch <%= value['dispatch'] %>
+<% end -%>
+<% if value['enabled'] and ! value['enabled'].empty? -%>
+  enabled
+<% end -%>
+
+<% end -%>
+<% end -%>
+
 acl
-appsession
-
-balance
-
-bind-process
 block
-
-
-compression
-
 cookie
-default-server
 
-description
-disabled
-dispatch
 enabled
 errorfile
 errorloc
