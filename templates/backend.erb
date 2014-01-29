@@ -12,8 +12,8 @@ backend <%= key %>
 <% if value['balance'] and ! value['balance'].empty? %>
   balance <%= value['balance'] %>
 <% end %>
-<% if value['bind-process'] and ! value['bind-process'].empty? %>
-  bind-process <%= value['bind-process'] %>
+<% if value['bind_process'] and ! value['bind_process'].empty? %>
+  bind-process <%= value['bind_process'] %>
 <% end %>
 <% if value['block'] and value['block'].kind_of?(Array) and ! value['block'].empty? %>
 <% value['block'].each do |block| %>
@@ -25,8 +25,8 @@ backend <%= key %>
   cookie <%= cookie %>
 <% end %>
 <% end %>
-<% if value['default-server'] and ! value['default-server'].empty? %>
-  default-server <%= value['default-server'] %>
+<% if value['default_server'] and ! value['default_server'].empty? %>
+  default-server <%= value['default_server'] %>
 <% end %>
 <% if value['disabled'] and ! value['disabled'].empty? %>
   disabled
@@ -37,25 +37,49 @@ backend <%= key %>
 <% if value['enabled'] and ! value['enabled'].empty? %>
   enabled
 <% end %>
-
-
-
-
+<% if value['errorfile'] and value['errorfile'].kind_of?(Array) and ! value['errorfile'].empty? %>
+<% value['errorfile'].each do |errorfile| %>
+  errorfile <%= errorfile %>
+<% end %>
+<% end %>
+<% if value['errorloc'] and value['errorloc'].kind_of?(Array) and ! value['errorloc'].empty? %>
+<% value['errorloc'].each do |errorloc| %>
+  errorloc <%= errorloc %>
+<% end %>
+<% end %>
+<% if value['errorloc302'] and value['errorloc302'].kind_of?(Array) and ! value['errorloc302'].empty? %>
+<% value['errorloc302'].each do |errorloc302| %>
+  errorloc302 <%= errorloc302 %>
+<% end %>
+<% end %>
+<% if value['errorloc303'] and value['errorloc303'].kind_of?(Array) and ! value['errorloc303'].empty? %>
+<% value['errorloc303'].each do |errorloc303| %>
+  errorloc303 <%= errorloc303 %>
+<% end %>
+<% end %>
+<% if value['force_persist'] and ! value['force_persist'].empty? %>
+  force-persist <%= value['force_persist'] %>
+<% end %>
+<% if value['fullconn'] and ! value['fullconn'].empty? %>
+  fullconn <%= value['fullconn'] %>
+<% end %>
+<% if value['grace'] and ! value['grace'].empty? %>
+  grace <%= value['grace'] %>
+<% end %>
+<% if value['hash-type'] and ! value['hash-type'].empty? %>
+  hash-type <%= value['hash-type'] %>
+<% end %>
+<% if value['http_check_disable_on_404'] and ! value['http_check_disable_on_404'].empty? %>
+  http-check disable-on-404
+<% end %>
+<% if value['http_check_expect'] and ! value['http_check_expect'].empty? %>
+  http-check expect <%= value['http_check_expect'] %>
+<% end %>
 
 <% end %>
 <% end %>
 
 
-errorfile
-errorloc
-errorloc302
-errorloc303
-force-persist
-fullconn
-grace
-hash-type
-http-check disable-on-404
-http-check expect
 http-check send-state
 http-request
 http-response
