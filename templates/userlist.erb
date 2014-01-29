@@ -1,7 +1,17 @@
-userlist L1
-  group G1 users tiger,scott
-  group G2 users xdb,scott
+<% if userlists and ! userlists.empty? %>
+<% userlists.sort_by {|key, value| key}.each do |key, value| %>
+userlist <%= key %>
+<% if value['group'] and value['group'].kind_of?(Array) and ! value['group'].empty? %>
+<% value['group'].each do |group| %>
+  group <%= group %>
+<% end %>
+<% end %>
 
-  user tiger password $6$k6y3o.eP$JlKBx9za9667qe4(...)xHSwRv6J.C0/D7cV91
-  user scott insecure-password elgato
-  user xdb insecure-password hello
+<% if value['user'] and value['user'].kind_of?(Array) and ! value['user'].empty? %>
+<% value['user'].each do |user| %>
+  user <%= user %>
+<% end %>
+<% end %>
+
+<% end %>
+<% end %>
