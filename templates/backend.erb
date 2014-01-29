@@ -94,32 +94,38 @@ backend <%= key %>
 <% if value['log'] and ! value['log'].empty? -%>
   log <%= value['log'] %>
 <% end -%>
-
-
-
-
-
-
+<% if value['mode'] and ! value['mode'].empty? -%>
+  mode <%= value['mode'] %>
+<% end -%>
+<% if value['option_abortonclose'] and ! value['option_abortonclose'].empty? -%>
+  option abortonclose
+<% end -%>
+<% if value['option_accept_invalid_http_response'] and ! value['option_accept_invalid_http_response'].empty? -%>
+  option accept-invalid-http-response
+<% end -%>
+<% if value['option_allbackups'] and ! value['option_allbackups'].empty? -%>
+  option allbackups
+<% end -%>
+<% if value['option_checkcache'] and ! value['option_checkcache'].empty? -%>
+  option checkcache
+<% end -%>
+<% if value['option_forceclose'] and ! value['option_forceclose'].empty? -%>
+  option forceclose
+<% end -%>
 
 
 <% end -%>
 <% end -%>
 
-mode
 
-option abortonclose
 
-option accept-invalid-http-response
-option allbackups
-option checkcache
 
-option forceclose
+
 option forwardfor
 option http-keep-alive
 option http-no-delay
 option http-pretend-keepalive
 option http-server-close
-
 option httpchk
 option httpclose
 option httplog
@@ -127,7 +133,6 @@ option http_proxy
 option independent-streams
 option ldap-check
 option log-health-checks
-
 option mysql-check
 option pgsql-check
 option nolinger
@@ -136,19 +141,17 @@ option persist
 option redispatch
 option redis-check
 option smtpchk
-
 option splice-auto
 option splice-request
 option splice-response
 option srvtcpka
 option ssl-hello-chk
-
 option tcp-check
-
 option tcp-smart-connect
 option tcpka
 option tcplog
 option transparent
+
 persist rdp-cookie
 
 redirect
