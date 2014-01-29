@@ -1,11 +1,11 @@
-<% if backends and ! backends.empty? %>
-<% backends.sort_by {|key, value| key}.each do |key, value| %>
+<% if backends and ! backends.empty? -%>
+<% backends.sort_by {|key, value| key}.each do |key, value| -%>
 backend <%= key %>
-<% if value['acl'] and value['acl'].kind_of?(Array) and ! value['acl'].empty? %>
-<% value['acl'].each do |acl| %>
+<% if value['acl'] and value['acl'].kind_of?(Array) and ! value['acl'].empty? -%>
+<% value['acl'].each do |acl| -%>
   acl <%= acl %>
-<% end %>
-<% end %>
+<% end -%>
+<% end -%>
 <% if value['appsession'] and ! value['appsession'].empty? %>
   appsession <%= value['appsession'] %>
 <% end %>
@@ -75,14 +75,19 @@ backend <%= key %>
 <% if value['http_check_expect'] and ! value['http_check_expect'].empty? %>
   http-check expect <%= value['http_check_expect'] %>
 <% end %>
-
+<% if value['http_check_send_state'] and ! value['http_check_send_state'].empty? %>
+  http-check send-state
+<% end %>
+<% if value['http_request'] and value['http_request'].kind_of?(Array) and ! value['http_request'].empty? %>
+<% value['http_request'].each do |http_request| %>
+  http-request <%= http_request %>
 <% end %>
 <% end %>
 
 
-http-check send-state
-http-request
-http-response
+<% end %>
+<% end %>
+
 tcp-check expect
 tcp-check send
 tcp-check send-binary
