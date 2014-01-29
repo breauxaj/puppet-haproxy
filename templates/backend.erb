@@ -6,87 +6,87 @@ backend <%= key %>
   acl <%= acl %>
 <% end -%>
 <% end -%>
-<% if value['appsession'] and ! value['appsession'].empty? %>
+<% if value['appsession'] and ! value['appsession'].empty? -%>
   appsession <%= value['appsession'] %>
-<% end %>
-<% if value['balance'] and ! value['balance'].empty? %>
+<% end -%>
+<% if value['balance'] and ! value['balance'].empty? -%>
   balance <%= value['balance'] %>
-<% end %>
-<% if value['bind_process'] and ! value['bind_process'].empty? %>
+<% end -%>
+<% if value['bind_process'] and ! value['bind_process'].empty? -%>
   bind-process <%= value['bind_process'] %>
-<% end %>
-<% if value['block'] and value['block'].kind_of?(Array) and ! value['block'].empty? %>
-<% value['block'].each do |block| %>
+<% end -%>
+<% if value['block'] and value['block'].kind_of?(Array) and ! value['block'].empty? -%>
+<% value['block'].each do |block| -%>
   block <%= block %>
-<% end %>
-<% end %>
-<% if value['cookie'] and value['cookie'].kind_of?(Array) and ! value['cookie'].empty? %>
-<% value['cookie'].each do |cookie| %>
+<% end -%>
+<% end -%>
+<% if value['cookie'] and value['cookie'].kind_of?(Array) and ! value['cookie'].empty? -%>
+<% value['cookie'].each do |cookie| -%>
   cookie <%= cookie %>
-<% end %>
-<% end %>
-<% if value['default_server'] and ! value['default_server'].empty? %>
+<% end -%>
+<% end -%>
+<% if value['default_server'] and ! value['default_server'].empty? -%>
   default-server <%= value['default_server'] %>
-<% end %>
-<% if value['disabled'] and ! value['disabled'].empty? %>
+<% end -%>
+<% if value['disabled'] and ! value['disabled'].empty? -%>
   disabled
-<% end %>
-<% if value['dispatch'] and ! value['dispatch'].empty? %>
+<% end -%>
+<% if value['dispatch'] and ! value['dispatch'].empty? -%>
   dispatch <%= value['dispatch'] %>
-<% end %>
-<% if value['enabled'] and ! value['enabled'].empty? %>
+<% end -%>
+<% if value['enabled'] and ! value['enabled'].empty? -%>
   enabled
-<% end %>
-<% if value['errorfile'] and value['errorfile'].kind_of?(Array) and ! value['errorfile'].empty? %>
-<% value['errorfile'].each do |errorfile| %>
+<% end -%>
+<% if value['errorfile'] and value['errorfile'].kind_of?(Array) and ! value['errorfile'].empty? -%>
+<% value['errorfile'].each do |errorfile| -%>
   errorfile <%= errorfile %>
-<% end %>
-<% end %>
-<% if value['errorloc'] and value['errorloc'].kind_of?(Array) and ! value['errorloc'].empty? %>
-<% value['errorloc'].each do |errorloc| %>
+<% end -%>
+<% end -%>
+<% if value['errorloc'] and value['errorloc'].kind_of?(Array) and ! value['errorloc'].empty? -%>
+<% value['errorloc'].each do |errorloc| -%>
   errorloc <%= errorloc %>
-<% end %>
-<% end %>
-<% if value['errorloc302'] and value['errorloc302'].kind_of?(Array) and ! value['errorloc302'].empty? %>
-<% value['errorloc302'].each do |errorloc302| %>
+<% end -%>
+<% end -%>
+<% if value['errorloc302'] and value['errorloc302'].kind_of?(Array) and ! value['errorloc302'].empty? -%>
+<% value['errorloc302'].each do |errorloc302| -%>
   errorloc302 <%= errorloc302 %>
-<% end %>
-<% end %>
-<% if value['errorloc303'] and value['errorloc303'].kind_of?(Array) and ! value['errorloc303'].empty? %>
-<% value['errorloc303'].each do |errorloc303| %>
+<% end -%>
+<% end -%>
+<% if value['errorloc303'] and value['errorloc303'].kind_of?(Array) and ! value['errorloc303'].empty? -%>
+<% value['errorloc303'].each do |errorloc303| -%>
   errorloc303 <%= errorloc303 %>
-<% end %>
-<% end %>
-<% if value['force_persist'] and ! value['force_persist'].empty? %>
+<% end -%>
+<% end -%>
+<% if value['force_persist'] and ! value['force_persist'].empty? -%>
   force-persist <%= value['force_persist'] %>
-<% end %>
-<% if value['fullconn'] and ! value['fullconn'].empty? %>
+<% end -%>
+<% if value['fullconn'] and ! value['fullconn'].empty? -%>
   fullconn <%= value['fullconn'] %>
-<% end %>
-<% if value['grace'] and ! value['grace'].empty? %>
+<% end -%>
+<% if value['grace'] and ! value['grace'].empty? -%>
   grace <%= value['grace'] %>
-<% end %>
-<% if value['hash-type'] and ! value['hash-type'].empty? %>
+<% end -%>
+<% if value['hash-type'] and ! value['hash-type'].empty? -%>
   hash-type <%= value['hash-type'] %>
-<% end %>
-<% if value['http_check_disable_on_404'] and ! value['http_check_disable_on_404'].empty? %>
+<% end -%>
+<% if value['http_check_disable_on_404'] and ! value['http_check_disable_on_404'].empty? -%>
   http-check disable-on-404
-<% end %>
-<% if value['http_check_expect'] and ! value['http_check_expect'].empty? %>
+<% end -%>
+<% if value['http_check_expect'] and ! value['http_check_expect'].empty? -%>
   http-check expect <%= value['http_check_expect'] %>
-<% end %>
-<% if value['http_check_send_state'] and ! value['http_check_send_state'].empty? %>
+<% end -%>
+<% if value['http_check_send_state'] and ! value['http_check_send_state'].empty? -%>
   http-check send-state
-<% end %>
-<% if value['http_request'] and value['http_request'].kind_of?(Array) and ! value['http_request'].empty? %>
-<% value['http_request'].each do |http_request| %>
+<% end -%>
+<% if value['http_request'] and value['http_request'].kind_of?(Array) and ! value['http_request'].empty? -%>
+<% value['http_request'].each do |http_request| -%>
   http-request <%= http_request %>
-<% end %>
-<% end %>
+<% end -%>
+<% end -%>
 
 
-<% end %>
-<% end %>
+<% end -%>
+<% end -%>
 
 tcp-check expect
 tcp-check send
