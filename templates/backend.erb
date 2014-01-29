@@ -112,6 +112,9 @@ backend <%= key %>
 <% if value['option_forceclose'] and ! value['option_forceclose'].empty? -%>
   option forceclose
 <% end -%>
+<% if value['option_forwardfor'] and ! value['option_forwardfor'].empty? -%>
+  option forwardfor <%= value['option_forwardfor'] %>
+<% end -%>
 
 
 <% end -%>
@@ -121,7 +124,7 @@ backend <%= key %>
 
 
 
-option forwardfor
+
 option http-keep-alive
 option http-no-delay
 option http-pretend-keepalive
