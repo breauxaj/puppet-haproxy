@@ -193,14 +193,18 @@ backend <%= key %>
 <% if value['persist_rdp_cookie'] and ! value['persist_rdp_cookie'].empty? -%>
   persist rdp-cookie
 <% end -%>
-
+<% if value['redirect'] and value['redirect'].kind_of?(Array) and ! value['redirect'].empty? -%>
+<% value['redirect'].each do |redirect| -%>
+  redirect <%= redirect %>
+<% end -%>
+<% end -%>
 
 <% end -%>
 <% end -%>
 
 
 
-redirect
+
 
 reqadd
 reqallow
