@@ -115,7 +115,15 @@ backend <%= key %>
 <% if value['option_forwardfor'] and ! value['option_forwardfor'].empty? -%>
   option forwardfor <%= value['option_forwardfor'] %>
 <% end -%>
-
+<% if value['option_http_no_delay'] and ! value['option_http_no_delay'].empty? -%>
+  option http-no-delay
+<% end -%>
+<% if value['option_http_pretend_keepalive'] and ! value['option_http_pretend_keepalive'].empty? -%>
+  option http-pretend-keepalive
+<% end -%>
+<% if value['option_http_server_close'] and ! value['option_http_server_close'].empty? -%>
+  option http-server-close
+<% end -%>
 
 <% end -%>
 <% end -%>
@@ -125,10 +133,9 @@ backend <%= key %>
 
 
 
-option http-keep-alive
-option http-no-delay
-option http-pretend-keepalive
-option http-server-close
+
+
+
 option httpchk
 option httpclose
 option httplog
