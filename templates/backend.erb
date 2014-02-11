@@ -124,45 +124,81 @@ backend <%= key %>
 <% if value['option_http_server_close'] and ! value['option_http_server_close'].empty? -%>
   option http-server-close
 <% end -%>
+<% if value['option_httpchk'] and ! value['option_httpchk'].empty? -%>
+  option httpchk <%= value['option_httpchk'] %>
+<% end -%>
+<% if value['option_httpclose'] and ! value['option_httpclose'].empty? -%>
+  option httpclose
+<% end -%>
+<% if value['option_httplog'] and ! value['option_httplog'].empty? -%>
+  option httplog
+<% end -%>
+<% if value['option_http_proxy'] and ! value['option_http_proxy'].empty? -%>
+  option http_proxy
+<% end -%>
+<% if value['option_independent_streams'] and ! value['option_independent_streams'].empty? -%>
+  option independent-streams
+<% end -%>
+<% if value['option_ldap_check'] and ! value['option_ldap_check'].empty? -%>
+  option ldap-check
+<% end -%>
+<% if value['option_log_health_checks'] and ! value['option_log_health_checks'].empty? -%>
+  option log-health-checks
+<% end -%>
+<% if value['option_mysql_check'] and ! value['option_mysql_check'].empty? -%>
+  option mysql-check user <%= value['option_mysql_check'] %>
+<% end -%>
+<% if value['option_nolinger'] and ! value['option_nolinger'].empty? -%>
+  option nolinger
+<% end -%>
+<% if value['option_originalto'] and ! value['option_originalto'].empty? -%>
+  option originalto <%= value['option_originalto'] %>
+<% end -%>
+<% if value['option_persist'] and ! value['option_persist'].empty? -%>
+  option persist
+<% end -%>
+<% if value['option_redispatch'] and ! value['option_redispatch'].empty? -%>
+  option redispatch
+<% end -%>
+<% if value['option_smtpchk'] and ! value['option_smtpchk'].empty? -%>
+  option smtpchk <%= value['option_smtpchk'] %>
+<% end -%>
+<% if value['option_splice_auto'] and ! value['option_splice_auto'].empty? -%>
+  option splice-auto
+<% end -%>
+<% if value['option_splice_request'] and ! value['option_splice_request'].empty? -%>
+  option splice-request
+<% end -%>
+<% if value['option_splice_response'] and ! value['option_splice_response'].empty? -%>
+  option splice-response
+<% end -%>
+<% if value['option_srvtcpka'] and ! value['option_srvtcpka'].empty? -%>
+  option srvtcpka
+<% end -%>
+<% if value['option_ssl_hello_chk'] and ! value['option_ssl_hello_chk'].empty? -%>
+  option ssl-hello-chk
+<% end -%>
+<% if value['option_tcp_smart_connect'] and ! value['option_tcp_smart_connect'].empty? -%>
+  option tcp-smart-connect
+<% end -%>
+<% if value['option_tcpka'] and ! value['option_tcpka'].empty? -%>
+  option tcpka
+<% end -%>
+<% if value['option_tcplog'] and ! value['option_tcplog'].empty? -%>
+  option tcplog
+<% end -%>
+<% if value['option_transparent'] and ! value['option_transparent'].empty? -%>
+  option transparent
+<% end -%>
+<% if value['persist_rdp_cookie'] and ! value['persist_rdp_cookie'].empty? -%>
+  persist rdp-cookie
+<% end -%>
+
 
 <% end -%>
 <% end -%>
 
 
-
-
-
-
-
-
-
-option httpchk
-option httpclose
-option httplog
-option http_proxy
-option independent-streams
-option ldap-check
-option log-health-checks
-option mysql-check
-option pgsql-check
-option nolinger
-option originalto
-option persist
-option redispatch
-option redis-check
-option smtpchk
-option splice-auto
-option splice-request
-option splice-response
-option srvtcpka
-option ssl-hello-chk
-option tcp-check
-option tcp-smart-connect
-option tcpka
-option tcplog
-option transparent
-
-persist rdp-cookie
 
 redirect
 
