@@ -350,19 +350,49 @@ backend <%= key %>
 <% if value['retries'] and ! value['retries'].empty? -%>
   retries <%= value['retries'] %>
 <% end -%>
+<% if value['rspadd'] and value['rspadd'].kind_of?(Array) and ! value['rspadd'].empty? -%>
+<% value['rspadd'].each do |rspadd| -%>
+  rspadd <%= rspadd %>
+<% end -%>
+<% end -%>
+<% if value['rspdel'] and value['rspdel'].kind_of?(Array) and ! value['rspdel'].empty? -%>
+<% value['rspdel'].each do |rspdel| -%>
+  rspdel <%= rspdel %>
+<% end -%>
+<% end -%>
+<% if value['rspdeny'] and value['rspdeny'].kind_of?(Array) and ! value['rspdeny'].empty? -%>
+<% value['rspdeny'].each do |rspdeny| -%>
+  rspdeny <%= rspdeny %>
+<% end -%>
+<% end -%>
+<% if value['rsprep'] and value['rsprep'].kind_of?(Array) and ! value['rsprep'].empty? -%>
+<% value['rsprep'].each do |rsprep| -%>
+  rsprep <%= rsprep %>
+<% end -%>
+<% end -%>
+<% if value['rspidel'] and value['rspidel'].kind_of?(Array) and ! value['rspidel'].empty? -%>
+<% value['rspidel'].each do |rspidel| -%>
+  rspidel <%= rspidel %>
+<% end -%>
+<% end -%>
+<% if value['rspideny'] and value['rspideny'].kind_of?(Array) and ! value['rspideny'].empty? -%>
+<% value['rspideny'].each do |rspideny| -%>
+  rspideny <%= rspideny %>
+<% end -%>
+<% end -%>
+<% if value['rspirep'] and value['rspirep'].kind_of?(Array) and ! value['rspirep'].empty? -%>
+<% value['rspirep'].each do |rspirep| -%>
+  rspirep <%= rspirep %>
+<% end -%>
+<% end -%>
 
 <% end -%>
 <% end -%>
 
 
 
-rspadd
-rspdel
-rspdeny
-rspidel
-rspideny
-rspirep
-rsprep
+
+
 server
 source
 
