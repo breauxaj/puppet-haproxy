@@ -224,22 +224,42 @@ backend <%= key %>
   option smtpchk <%= value['option_smtpchk'] %>
 <% end -%>
 <% if value['option_splice_auto'] and ! value['option_splice_auto'].empty? -%>
+<% if value['option_splice_auto'].downcase.match('no') -%>
+  no option splice-auto
+<% else -%>
   option splice-auto
 <% end -%>
+<% end -%>
 <% if value['option_splice_request'] and ! value['option_splice_request'].empty? -%>
+<% if value['option_splice_request'].downcase.match('no') -%>
+  no option splice-request
+<% else -%>
   option splice-request
 <% end -%>
+<% end -%>
 <% if value['option_splice_response'] and ! value['option_splice_response'].empty? -%>
+<% if value['option_splice_response'].downcase.match('no') -%>
+  no option splice-response
+<% else -%>
   option splice-response
 <% end -%>
+<% end -%>
 <% if value['option_srvtcpka'] and ! value['option_srvtcpka'].empty? -%>
+<% if value['option_srvtcpka'].downcase.match('no') -%>
+  no option srvtcpka
+<% else -%>
   option srvtcpka
+<% end -%>
 <% end -%>
 <% if value['option_ssl_hello_chk'] and ! value['option_ssl_hello_chk'].empty? -%>
   option ssl-hello-chk
 <% end -%>
 <% if value['option_tcp_smart_connect'] and ! value['option_tcp_smart_connect'].empty? -%>
+<% if value['option_tcp_smart_connect'].downcase.match('no') -%>
+  no option tcp-smart-connect
+<% else -%>
   option tcp-smart-connect
+<% end -%>
 <% end -%>
 <% if value['option_tcpka'] and ! value['option_tcpka'].empty? -%>
   option tcpka
