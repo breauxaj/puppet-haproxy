@@ -170,31 +170,55 @@ backend <%= key %>
   option httplog
 <% end -%>
 <% if value['option_http_proxy'] and ! value['option_http_proxy'].empty? -%>
+<% if value['option_http_proxy'].downcase.match('no') -%>
+  no option http_proxy
+<% else -%>
   option http_proxy
 <% end -%>
+<% end -%>
 <% if value['option_independent_streams'] and ! value['option_independent_streams'].empty? -%>
+<% if value['option_independent_streams'].downcase.match('no') -%>
+  no option independent-streams
+<% else -%>
   option independent-streams
+<% end -%>
 <% end -%>
 <% if value['option_ldap_check'] and ! value['option_ldap_check'].empty? -%>
   option ldap-check
 <% end -%>
 <% if value['option_log_health_checks'] and ! value['option_log_health_checks'].empty? -%>
+<% if value['option_log_health_checks'].downcase.match('no') -%>
+  no option log-health-checks
+<% else -%>
   option log-health-checks
+<% end -%>
 <% end -%>
 <% if value['option_mysql_check'] and ! value['option_mysql_check'].empty? -%>
   option mysql-check user <%= value['option_mysql_check'] %>
 <% end -%>
 <% if value['option_nolinger'] and ! value['option_nolinger'].empty? -%>
+<% if value['option_nolinger'].downcase.match('no') -%>
+  no option nolinger
+<% else -%>
   option nolinger
+<% end -%>
 <% end -%>
 <% if value['option_originalto'] and ! value['option_originalto'].empty? -%>
   option originalto <%= value['option_originalto'] %>
 <% end -%>
 <% if value['option_persist'] and ! value['option_persist'].empty? -%>
+<% if value['option_persist'].downcase.match('no') -%>
+  no option persist
+<% else -%>
   option persist
 <% end -%>
+<% end -%>
 <% if value['option_redispatch'] and ! value['option_redispatch'].empty? -%>
+<% if value['option_redispatch'].downcase.match('no') -%>
+  no option redispatch
+<% else -%>
   option redispatch
+<% end -%>
 <% end -%>
 <% if value['option_smtpchk'] and ! value['option_smtpchk'].empty? -%>
   option smtpchk <%= value['option_smtpchk'] %>
