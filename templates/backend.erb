@@ -143,7 +143,11 @@ backend <%= key %>
 <% end -%>
 <% end -%>
 <% if value['option_http_pretend_keepalive'] and ! value['option_http_pretend_keepalive'].empty? -%>
+<% if value['option_http_pretend_keepalive'].downcase.match('no') -%>
+  no option http-pretend-keepalive
+<% else -%>
   option http-pretend-keepalive
+<% end -%>
 <% end -%>
 <% if value['option_http_server_close'] and ! value['option_http_server_close'].empty? -%>
   option http-server-close
