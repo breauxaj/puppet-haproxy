@@ -292,33 +292,67 @@ backend <%= key %>
   reqallow <%= reqallow %>
 <% end -%>
 <% end -%>
-
-
+<% if value['reqdel'] and value['reqdel'].kind_of?(Array) and ! value['reqdel'].empty? -%>
+<% value['reqdel'].each do |reqdel| -%>
+  reqdel <%= reqdel %>
+<% end -%>
+<% end -%>
+<% if value['reqdeny'] and value['reqdeny'].kind_of?(Array) and ! value['reqdeny'].empty? -%>
+<% value['reqdeny'].each do |reqdeny| -%>
+  reqdeny <%= reqdeny %>
+<% end -%>
+<% end -%>
+<% if value['reqpass'] and value['reqpass'].kind_of?(Array) and ! value['reqpass'].empty? -%>
+<% value['reqpass'].each do |reqpass| -%>
+  reqpass <%= reqpass %>
+<% end -%>
+<% end -%>
+<% if value['reqrep'] and value['reqrep'].kind_of?(Array) and ! value['reqrep'].empty? -%>
+<% value['reqrep'].each do |reqrep| -%>
+  reqrep <%= reqrep %>
+<% end -%>
+<% end -%>
+<% if value['reqtarpit'] and value['reqtarpit'].kind_of?(Array) and ! value['reqtarpit'].empty? -%>
+<% value['reqtarpit'].each do |reqtarpit| -%>
+  reqtarpit <%= reqtarpit %>
+<% end -%>
+<% end -%>
+<% if value['reqiallow'] and value['reqiallow'].kind_of?(Array) and ! value['reqiallow'].empty? -%>
+<% value['reqiallow'].each do |reqiallow| -%>
+  reqiallow <%= reqiallow %>
+<% end -%>
+<% end -%>
+<% if value['reqidel'] and value['reqidel'].kind_of?(Array) and ! value['reqidel'].empty? -%>
+<% value['reqidel'].each do |reqidel| -%>
+  reqidel <%= reqidel %>
+<% end -%>
+<% end -%>
+<% if value['reqideny'] and value['reqideny'].kind_of?(Array) and ! value['reqideny'].empty? -%>
+<% value['reqideny'].each do |reqideny| -%>
+  reqideny <%= reqideny %>
+<% end -%>
+<% end -%>
+<% if value['reqipass'] and value['reqipass'].kind_of?(Array) and ! value['reqipass'].empty? -%>
+<% value['reqipass'].each do |reqipass| -%>
+  reqipass <%= reqipass %>
+<% end -%>
+<% end -%>
+<% if value['reqirep'] and value['reqirep'].kind_of?(Array) and ! value['reqirep'].empty? -%>
+<% value['reqirep'].each do |reqirep| -%>
+  reqirep <%= reqirep %>
+<% end -%>
+<% end -%>
+<% if value['reqitarpit'] and value['reqitarpit'].kind_of?(Array) and ! value['reqitarpit'].empty? -%>
+<% value['reqitarpit'].each do |reqitarpit| -%>
+  reqitarpit <%= reqitarpit %>
+<% end -%>
+<% end -%>
 
 
 <% end -%>
 <% end -%>
 
 
-
-
-
-
-
-reqdel
-reqdeny
-reqiallow
-reqidel
-reqideny
-reqipass
-reqirep
-reqisetbe
-reqitarpit
-reqpass
-reqrep
-
-reqsetbe
-reqtarpit
 retries
 rspadd
 rspdel
