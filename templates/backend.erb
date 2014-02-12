@@ -98,10 +98,18 @@ backend <%= key %>
   mode <%= value['mode'] %>
 <% end -%>
 <% if value['option_abortonclose'] and ! value['option_abortonclose'].empty? -%>
+<% if value['option_abortonclose'].downcase.match('no') -%>
+  no option abortonclose
+<% else -%>
   option abortonclose
 <% end -%>
+<% end -%>
 <% if value['option_accept_invalid_http_response'] and ! value['option_accept_invalid_http_response'].empty? -%>
+<% if value['option_accept_invalid_http_response'].downcase.match('no') -%>
+  no option accept-invalid-http-response
+<% else %>
   option accept-invalid-http-response
+<% end -%>
 <% end -%>
 <% if value['option_allbackups'] and ! value['option_allbackups'].empty? -%>
   option allbackups
