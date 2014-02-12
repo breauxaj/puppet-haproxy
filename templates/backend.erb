@@ -347,13 +347,15 @@ backend <%= key %>
   reqitarpit <%= reqitarpit %>
 <% end -%>
 <% end -%>
-
+<% if value['retries'] and ! value['retries'].empty? -%>
+  retries <%= value['retries'] %>
+<% end -%>
 
 <% end -%>
 <% end -%>
 
 
-retries
+
 rspadd
 rspdel
 rspdeny
