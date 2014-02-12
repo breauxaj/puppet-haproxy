@@ -112,19 +112,35 @@ backend <%= key %>
 <% end -%>
 <% end -%>
 <% if value['option_allbackups'] and ! value['option_allbackups'].empty? -%>
+<% if value['option_allbackups'].downcase.match('no') -%>
+  no option allbackups
+<% else -%>
   option allbackups
 <% end -%>
+<% end -%>
 <% if value['option_checkcache'] and ! value['option_checkcache'].empty? -%>
+<% if value['option_checkcache'].downcase.match('no') -%>
+  no option checkcache
+<% else -%>
   option checkcache
 <% end -%>
+<% end -%>
 <% if value['option_forceclose'] and ! value['option_forceclose'].empty? -%>
+<% if value['option_forceclose'].downcase.match('no') -%>
+  no option forceclose
+<% else -%>
   option forceclose
+<% end -%>
 <% end -%>
 <% if value['option_forwardfor'] and ! value['option_forwardfor'].empty? -%>
   option forwardfor <%= value['option_forwardfor'] %>
 <% end -%>
 <% if value['option_http_no_delay'] and ! value['option_http_no_delay'].empty? -%>
+<% if value['option_http_no_delay'].downcase.match('no') -%>
+  no option http-no-delay
+<% else -%>
   option http-no-delay
+<% end -%>
 <% end -%>
 <% if value['option_http_pretend_keepalive'] and ! value['option_http_pretend_keepalive'].empty? -%>
   option http-pretend-keepalive
