@@ -385,6 +385,16 @@ backend <%= key %>
   rspirep <%= rspirep %>
 <% end -%>
 <% end -%>
+<% if value['server'] and value['server'].kind_of?(Array) and ! value['server'].empty? -%>
+<% value['server'].each do |server| -%>
+  server <%= server %>
+<% end -%>
+<% end -%>
+<% if value['source'] and ! value['source'].empty? -%>
+  source <%= value['source'] %>
+<% end -%>
+
+
 
 <% end -%>
 <% end -%>
@@ -393,8 +403,8 @@ backend <%= key %>
 
 
 
-server
-source
+
+
 
 stats admin
 stats auth
