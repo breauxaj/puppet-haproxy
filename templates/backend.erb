@@ -150,13 +150,21 @@ backend <%= key %>
 <% end -%>
 <% end -%>
 <% if value['option_http_server_close'] and ! value['option_http_server_close'].empty? -%>
+<% if value['option_http_server_close'].downcase.match('no') -%>
+  no option http-server-close
+<% else -%>
   option http-server-close
+<% end -%>
 <% end -%>
 <% if value['option_httpchk'] and ! value['option_httpchk'].empty? -%>
   option httpchk <%= value['option_httpchk'] %>
 <% end -%>
 <% if value['option_httpclose'] and ! value['option_httpclose'].empty? -%>
+<% if value['option_httpclose'].downcase.match('no') -%>
+  no option httpclose
+<% else -%>
   option httpclose
+<% end -%>
 <% end -%>
 <% if value['option_httplog'] and ! value['option_httplog'].empty? -%>
   option httplog
