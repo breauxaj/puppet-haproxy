@@ -268,7 +268,11 @@ backend <%= key %>
   option tcplog
 <% end -%>
 <% if value['option_transparent'] and ! value['option_transparent'].empty? -%>
+<% if value['option_transparent'].downcase.match('no') -%>
+  no option transparent
+<% else -%>
   option transparent
+<% end -%>
 <% end -%>
 <% if value['persist_rdp_cookie'] and ! value['persist_rdp_cookie'].empty? -%>
   persist rdp-cookie
@@ -278,6 +282,19 @@ backend <%= key %>
   redirect <%= redirect %>
 <% end -%>
 <% end -%>
+<% if value['reqadd'] and value['reqadd'].kind_of?(Array) and ! value['reqadd'].empty? -%>
+<% value['reqadd'].each do |reqadd| -%>
+  reqadd <%= reqadd %>
+<% end -%>
+<% end -%>
+<% if value['reqallow'] and value['reqallow'].kind_of?(Array) and ! value['reqallow'].empty? -%>
+<% value['reqallow'].each do |reqallow| -%>
+  reqallow <%= reqallow %>
+<% end -%>
+<% end -%>
+
+
+
 
 <% end -%>
 <% end -%>
@@ -286,8 +303,8 @@ backend <%= key %>
 
 
 
-reqadd
-reqallow
+
+
 reqdel
 reqdeny
 reqiallow
