@@ -1,8 +1,10 @@
-class haproxy {
+class haproxy (
+  $ensure = 'latest'
+){
   $required = $::operatingsystem ? {
     /(?i-mx:centos|fedora|redhat|scientific)/ => 'haproxy',
   }
 
-  package { $required: ensure => latest }
+  package { $required: ensure => $ensure }
 
 }
